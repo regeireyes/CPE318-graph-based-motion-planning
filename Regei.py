@@ -81,8 +81,7 @@ class StartPoint():
         for fase in range(2):
             corriendo = True
             while corriendo:
-                #x, y = pygame.mouse.get_pos()
-                #print("Elija la posicion ",fases[fase], "su mouse tiene posicion; ", x//dis, y//dis)
+               
                 pygame.init()
                 for event in pygame.event.get():
 
@@ -95,7 +94,7 @@ class StartPoint():
                         sposx, sposy = pygame.mouse.get_pos()
                         sposx = sposx // dis
                         sposy = sposy // dis
-                        #print("las pocisiones iniciales son: ", sposx, sposy )
+                       
                         if [sposx,sposy] in invalids:
                             print("SOLO SE PUEDE DENTRO DEL RECUADRO NEGRO")
                             self.invalid_pos()
@@ -157,7 +156,7 @@ class StartPoint():
                     if [oposx,oposy] not in invalids:
                         invalids.append([oposx,oposy])
                         obs.append([oposx,oposy])
-                        #print("Agregue ",[oposx,oposy]," a ",obs," y a ",invalids)
+                       
                     if [oposx,oposy] == [sposx,sposy] or [oposx,oposy] == [eposx,eposy]:
                         print("NO SE PUEDE TAPAR LA ENTRADA NI SALIDA")
                         self.invalid_pos()
@@ -210,7 +209,7 @@ class StartPoint():
             elif move[-1] == "D":
                 self.pos[1] += 1
             pygame.draw.rect(surface, (0,0,255), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
-        #print("Este es el camino: ", all_paths[sum], "que termina en ", self.pos)
+       
 
         pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
         pygame.display.flip()
@@ -242,28 +241,25 @@ class StartPoint():
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
                     self.pos[0] -= 1
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
-                    #print("Estoy dibujando, ",right_path[0]," y voy por la letra l, que lleva a la posicion ", self.pos)
-
+                   
 
                 elif move == "R":
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
                     self.pos[0] += 1
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
-                    #print("Estoy dibujando, ",right_path[0]," y voy por la letra r, que lleva a la posicion ", self.pos)
-
+                   
 
                 elif move == "U":
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
                     self.pos[1] -= 1
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
-                    #print("Estoy dibujando, ",right_path[0]," y voy por la letra u, que lleva a la posicion ", self.pos)
-
+                   
 
                 elif move == "D":
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
                     self.pos[1] += 1
                     pygame.draw.rect(surface, (255,69,0), (self.pos[0]*dis+1, self.pos[1]*dis+1, dis-1, dis-1))
-                    #print("Estoy dibujando, ",right_path[0]," y voy por la letra d, que lleva a la posicion ", self.pos)
+                  
                 pygame.display.flip()
 
 
@@ -275,8 +271,7 @@ class StartPoint():
 
 
         for move in moves:
-            invalids.append(self.pos.copy())#Agrega la posicion actual, para que no la repita
-
+            invalids.append(self.pos.copy())
             if move == "L" :
                 self.pos[0] -= 1
 
@@ -295,10 +290,7 @@ class StartPoint():
         else:
             invalids.append(self.pos.copy())
             all_pos.append(self.pos.copy())
-            #self.draw_path(self.pos)
-            #self.pos = self.ppos#so as to connect with end
-            #print(invalids)
-            #print("Este es el recorrido ",moves," que termina en la posicion; ",self.pos)
+           
             return True
 
 
@@ -354,8 +346,7 @@ class StartPoint():
                 if self.valid_move(put):
                     all_paths.append(put)
                     all_paths2.append(put)
-                    #self.path.append(put)
-                    #print("Este es el recorrido ",put," con posicion ", self.pos)
+                  
                     self.draw_paths(surface, sum)
                     nums.put(put)
 
@@ -439,10 +430,7 @@ def get_input():
     global rows, obstaculos
     x1 = int(entry1.get())
     x2 = variable.get()
-    #if type(x1) is float or type(x1) is str:
-        #label2 = tk.Label(root, text=type(x1))
-        #ask_display.create_window(200, 250, window=label2)
-    #else:
+  
     label2 = tk.Label(root, text="")
     ask_display.create_window(200, 250, window=label2)
     obstaculos = int(x1)
