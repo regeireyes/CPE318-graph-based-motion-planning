@@ -4,3 +4,7 @@
 
 ![image](https://user-images.githubusercontent.com/48249881/141956015-774fa81f-3d4c-45fb-bf8c-1ac5a7d6596c.png)
 ![image](https://user-images.githubusercontent.com/48249881/141956051-ac006591-78b2-4f5c-92bb-bd4afcf30515.png)
+
+# Small = 10x10 grid - max obstacle 29
+# Medium = 20x20 grid - max obstacle 150
+# Large = 50x50 grid - max obstacle 400
